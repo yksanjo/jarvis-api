@@ -1,62 +1,84 @@
-# Jarvis API - Standalone Backend Service
+# jarvis-api
 
-A standalone REST API server for Jarvis AI assistant. Can be used by all Jarvis clients (CLI, Widget, Mobile, Web).
+## Detailed Description
 
-## Features
+jarvis-api is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-- 🌐 **REST API** - Full RESTful endpoints
-- 📝 **Tasks API** - CRUD operations for tasks
-- 📅 **Events API** - Calendar event management
-- 🤖 **AI Chat** - Ollama LLM integration
-- 🔒 **Local Only** - No external dependencies
-- ⚡ **Fast** - Built with FastAPI
+## Problem Statement
 
-## Installation
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt  # or: pip install -e .[dev]
+pytest
 ```
 
 ## Usage
 
-```bash
-# Start the server
-python main.py
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-# Server runs on http://localhost:8000
-# API docs at http://localhost:8000/docs
-```
+## Quality Standards
 
-## API Endpoints
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-### Tasks
-- `GET /api/tasks` - List all tasks
-- `POST /api/tasks` - Create task
-- `PUT /api/tasks/{id}` - Update task
-- `DELETE /api/tasks/{id}` - Delete task
+## Security
 
-### Events
-- `GET /api/events` - List events
-- `POST /api/events` - Create event
-- `DELETE /api/events/{id}` - Delete event
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-### Chat
-- `POST /api/chat` - Chat with AI
-- `GET /api/llm/status` - Check LLM status
+## Contributing
 
-## Docker
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-```bash
-docker build -t jarvis-api .
-docker run -p 8000:8000 jarvis-api
-```
+## Roadmap
 
-## Requirements
+Track upcoming milestones, technical debt, and planned feature work.
 
-- Python 3.9+
-- FastAPI
-- Ollama (optional, for AI features)
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
